@@ -1,4 +1,6 @@
-# Evidencia 1 | Proyecto integrador 
+# Proyecto Simulador RPG
+
+Este proyecto es una propuesta para la simulación de un sistema de combate RPG (Role-Playing Game) en el que se modelan diferentes unidades como Arqueros, Guerreros y Magos. Utilizando C++ como lenguaje base, este sistema permite explorar las interacciones entre diferentes personajes en un entorno modular y fácilmente extensible.
 
 ## Diagrama de Clase UML
 
@@ -72,10 +74,6 @@ classDiagram
       Unidad <|-- Mago
 
 ```
-
-# Proyecto Simulador RPG
-
-Este proyecto es una propuesta para la simulación de un sistema de combate RPG (Role-Playing Game) en el que se modelan diferentes unidades como Arqueros, Guerreros y Magos. Utilizando C++ como lenguaje base, este sistema permite explorar las interacciones entre diferentes personajes en un entorno modular y fácilmente extensible.
 
 ## Descripción General
 
