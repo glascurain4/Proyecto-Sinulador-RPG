@@ -73,39 +73,56 @@ classDiagram
 
 ```
 
-## Documentación Proyecto
-Programación orientada a objetos (Gpo 850)
+# Proyecto Simulador RPG
 
-Nombre: Gabriel Enrique Lascurain Flores
+Este proyecto es una propuesta para la simulación de un sistema de combate RPG (Role-Playing Game) en el que se modelan diferentes unidades como Arqueros, Guerreros y Magos. Utilizando C++ como lenguaje base, este sistema permite explorar las interacciones entre diferentes personajes en un entorno modular y fácilmente extensible.
 
-Matrícula: A01707236
+## Descripción General
 
+El simulador está diseñado para representar batallas o interacciones estratégicas entre unidades RPG, cada una con habilidades y características únicas. Los personajes están organizados en clases individuales que encapsulan su comportamiento y atributos, fomentando el uso de principios de programación orientada a objetos.
 
-En este proyecto, nuestro propósito era crear un sistema de clases haciendo uso de la programación orientada objetos
-el cual fuese capaz de abstraer y generar un juego donde  pudiesemos crear unidades o combatientes con diferentes
-características para posteriormente enfrentarles entre si. Para hacerlo posible hice uso de las nuevas herramientas
-aprendidas en este curso, siendo dichos:
+## Funcionalidades Principales
 
-La Herencia, para la creación de las mismas unidades, familiarizandolas en aquellas propiedades básicas que compartían y
-definiéndolas en clases derivadas para darles distintas características. Llegando así a las unidades de Guerrero, Arquero
-y Mago. Compartiendo atributos y creando nuevos propios para cada uno, así como incorporando métodos que a siendo
-virtuales en nuestra clase base, definen y vuelven útiles a nuestras clases derivadas. En mi caso siendo las clases
-"atacar()" y "estaVivo()", sin las cuales nuestras clases derivadas no podrían concretarse y serían inútiles, como
-es lógico con la abstracción y utilidad que le brindaremos a nuestras clases.
+1. **Clases de Personajes**
+   - **Arquero**: Especialista en ataques a distancia con alta precisión.
+   - **Guerrero**: Unidad de combate cuerpo a cuerpo con alta resistencia.
+   - **Mago**: Maestro de hechizos con habilidades ofensivas y defensivas únicas.
 
-El Polimorfismo, se ve en los mismos archivos de clases, donde a partir de los métodos ya creados para la clase base Unidad,
-a pesar de esta ser una clase abstracta pura, utilizamos y sobreescribimos dichos métodos en nuestras clases derivadas
-para brindarle distintas características a la misma función dependiendo de la clase del objeto en el que se utilice. Siendo
-el ejemplo más evidente nuestro método "imprimir()", el cuál se adapta a las clases derivadas, desplegándonos en la terminal
-el tipo de clase de nuestro objeto y los datos del mismo. Este mismo lo aprovechamos fuertemente en nuestro archivo main, al
-utilizar estos métodos sobre vectores de tipo apuntador a nuestra clase base, permitiéndonos guardar todos nuestros objetos
-en un mismo arreglo y aprovechar las propiedades polimórficas de sus métodos y pudiendo hacerlos interactuar entre si.
+2. **Sistema Modular**
+   - Cada unidad se implementa como una clase independiente para facilitar su modificación y extensión.
+   - Gestión centralizada a través de clases base (`Unidad`) y derivadas (`Arquero`, `Guerrero`, `Mago`).
 
-Por otro lado tenemos la sobrecarga de operadores, siendo un tema bastante nuevo y bastante divertido de usar, donde
-realmente tenía muchísima libertad para hacer lo que quisiese, pero opte por facilitarnos la vida a mi y a mi profesora
-utilizando el operador "+=" entre dos unidades de combate, o entre dos apuntadores mejor dicho, presentando en la terminal las dos unidades a enfrentar, haciendo uso de sus métodos "imprimir()" de manera polimórfica. Igualmente hice uso del operador "++" como preincremento, que simplemente tiene la utilidad de subir de nivel de manera dinámica a nuestra unidad, tal como esta definido en su setter de Nivel que actualiza sus atributos al subir o bajar de nivel.
+3. **Interacciones Dinámicas**
+   - Simulación de ataques, defensas y habilidades específicas de cada unidad.
+   - Escenarios personalizables para probar estrategias.
 
-Finalmente está el uso de excepciones, sin duda un tema bastante complejo y algo abrumador. Por utilidad en mi código y por simpleza y mi propia salud mental. Opté por hacer uso de la excepción "invalid_argument" de la libreria "<stdexcept>", únicamente (que es muy importante) para asegurar que nuestros constructores por parámetros funcionaran correctamente al ser utilizados por nuestro usuario en la creación de su ejército. El cuál implemente con un "switch" y permitiéndole al usuario crear ahí mismo sus unidades de combate una por una, permitiéndole hacer su ejército tan grande o pequeño como quisiese y asignandole los atributos que quisiese a sus combatientes de la clase que quisiese. Esto lo hice por gusto personal pero igualmente porque se me complicó bastante el implementar la lectura de archivos correctamente, es un tema que solucionaré personalmente pero por el momento estoy muy satisfecho con el resultado de mi proyecto.
+4. **Makefile Integrado**
+   - Automatización del proceso de compilación para facilitar el desarrollo y ejecución del programa.
 
-En conclusión, me pareció un proyecto muy divertido y un reto apropiado para implementar los temas vistos en este curso. No tengo más que decir, estoy conforme con el resultado de mi proyecto y confiado de haber entendido e implementado los temas nuevos. Me ayudó muchísimo este curso y no requerí de fuentes externas al material brindado por el mismo para la realización de este proyecto y el entendimiento de los temas.
+## Estructura del Proyecto
+
+### Archivos de Código
+- `Unidad.hpp` y `Unidad.cpp`: Clase base que define los atributos y métodos comunes a todas las unidades.
+- `Arquero.hpp` y `Arquero.cpp`: Implementación de la clase Arquero.
+- `Guerrero.hpp` y `Guerrero.cpp`: Implementación de la clase Guerrero.
+- `Mago.hpp` y `Mago.cpp`: Implementación de la clase Mago.
+- `exercise.cpp`: Programa principal que ejecuta las interacciones entre las unidades.
+
+### Archivo de Configuración
+- `makefile`: Archivo para compilar el proyecto con comandos simples.
+
+### Documentación
+- `README.md`: Descripción del proyecto y guía de uso.
+
+El **Proyecto Simulador RPG** puede servir como base para:
+- Desarrollar videojuegos basados en combate RPG.
+- Prototipar mecánicas de combate para juegos más complejos.
+- Utilizarlo como recurso educativo en programación orientada a objetos y diseño modular.
+
+## Ejecución del Proyecto
+
+1. Clona el repositorio y navega al directorio del proyecto.
+2. Compila el proyecto utilizando el `makefile`:
+   ```bash
+   make
 
